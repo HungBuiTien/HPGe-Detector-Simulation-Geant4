@@ -3,30 +3,15 @@
 /run/verbose 1
 /event/verbose 0
 
-# Mesh for scorring
-/score/create/boxMesh Tumor
-/score/mesh/boxSize 2.025 2.025 2.025 cm
-/score/mesh/nBin 81 81 81
-/score/mesh/translate/xyz 0. 0. 0. cm
-/score/quantity/doseDeposit Dose
-/score/close
-/score/list
-
 /run/initialize
 
 # Source
 /control/execute GPS.in
-
-# Collimator
-/calorimeter/helmetSize 18
 
 #
 /run/printProgress 1
 
 # Histories
 /run/beamOn 10000000
-
-# Save results
-/score/dumpQuantityToFile Tumor Dose DepositedDose.txt
 
 
